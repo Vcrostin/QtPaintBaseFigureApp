@@ -9,6 +9,10 @@ public:
 
     void draw(QPainter& qp)const override;
 
+    bool is_inside(const QPoint& qp)const override;
+
+    QString getInfo() const override;
+
 private:
     int x,y,width,height;
 };

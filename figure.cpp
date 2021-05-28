@@ -4,12 +4,21 @@
 
 figure::figure()
 {
+}
+
+figure::figure(QColor qc, QColor qc2nd):qb(qc),qbChose(qc2nd)
+{
 
 }
 
-void figure::draw(QPainter &qp) const
+void figure::setBrushColors(QPainter &qp) const
 {
-    qp.drawLine(0,0,100,100);
+    if(is_chosen){
+        qp.setBrush(qb);
+    }
+    else {
+        qp.setBrush(qbChose);
+    }
 }
 
 figure::~figure()
